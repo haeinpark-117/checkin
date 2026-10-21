@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>응통과 학생 상담 · 2026-2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda:opsz,wght@6..96,900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #D6322A;
+    --red-text: #B0261F;
+    --blue: #62B4EE;
+    --ink: #1A1A1A;
+    --muted: #555555;
+    --line: #C3CBD4;
+    --grid: #DDE3EA;
+    --paper: #F6F7F9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background-color: var(--paper);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 16px 16px;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 0 18px 56px; }
+
+  /* Header */
+  .hero { position: relative; height: 210px; }
+  .hero svg.orbit { position: absolute; left: 0; top: 0; width: 100%; height: 210px; }
+  .num { position: absolute; font-family: 'Bodoni Moda', serif; font-weight: 900; font-size: 130px; line-height: 1; }
+  .n1 { left: calc(50% - 49px); top: 24px; color: var(--ink); }
+  .n2 { left: calc(50% + 13px); top: 32px; color: var(--red); mix-blend-mode: multiply; }
+  .n3 { left: calc(50% + 81px); top: 32px; color: var(--ink); }
+  .n4 { left: calc(50% + 113px); top: 24px; color: var(--blue); }
+  .frame { position: absolute; left: calc(50% + 17px); top: 56px; width: 62px; height: 90px; border: 1px solid var(--red); }
+  .dot { position: absolute; width: 8px; height: 8px; border-radius: 999px; background: var(--red); }
+  .label { position: absolute; left: 0; top: 172px; font-size: 12px; font-weight: 700; color: var(--red-text); }
+
+  /* Body */
+  .stack { display: flex; flex-direction: column; gap: 26px; padding-top: 14px; }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  .kicker { font-size: 13px; font-weight: 700; color: var(--red-text); }
+  .qhead { display: flex; align-items: flex-start; gap: 8px; }
+  .qnum { flex-shrink: 0; background: var(--red); color: #FFFFFF; font-family: 'Archivo Black', sans-serif; font-size: 12px; padding: 3px 7px; margin-top: 2px; }
+  .qtitle { font-size: 16px; font-weight: 900; line-height: 1.45; }
+
+  .moods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .mood {
+    font: inherit; display: flex; align-items: center; gap: 8px; text-align: left;
+    font-size: 14px; font-weight: 500; padding: 10px 12px; min-height: 48px;
+    border: 1px solid var(--line); background: #FFFFFF; color: var(--muted); cursor: pointer;
+  }
+  .mood[aria-pressed="true"] { border: 2px solid var(--red); color: var(--ink); font-weight: 900; }
+  .mood .pip { width: 12px; height: 12px; border-radius: 999px; flex-shrink: 0; border: 1.4px solid; }
+
+  textarea {
+    font: inherit; font-size: 15px; padding: 12px; width: 100%;
+    border: 1.4px solid var(--ink); border-radius: 0; background: #FFFFFF; color: var(--ink); resize: vertical; min-height: 92px;
+  }
+  textarea:focus, .mood:focus-visible, .chip:focus-visible, .send:focus-visible, a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font: inherit; font-size: 14px; font-weight: 700; padding: 10px 14px; min-height: 44px;
+    border: 1.4px solid var(--ink); background: #FFFFFF; color: var(--ink); cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--ink); color: #FFFFFF; }
+
+  .send {
+    font: inherit; font-size: 16px; font-weight: 900; padding: 16px; min-height: 54px; width: 100%;
+    border: none; background: var(--red); color: #FFFFFF; cursor: pointer;
+  }
+  .send[disabled] { opacity: 0.6; cursor: default; }
+
+  .guide { background: #FFFFFF; border: 1.4px solid var(--ink); padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .guide h2 { margin: 0; font-size: 15px; font-weight: 900; }
+  .step { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.6; }
+  .step b.n { flex-shrink: 0; width: 20px; height: 20px; border: 1.4px solid var(--red); color: var(--red); font-family: 'Archivo Black', sans-serif; font-size: 11px; font-weight: 400; display: flex; align-items: center; justify-content: center; }
+  .portal { align-self: flex-start; font-size: 14px; font-weight: 700; padding: 11px 16px; border: 1.4px solid var(--ink); color: var(--ink); text-decoration: none; }
+  .portal:hover { color: var(--red); }
+
+  .done { display: flex; flex-direction: column; gap: 18px; padding-top: 30px; }
+  .done .card { background: #FFFFFF; border: 1.4px solid var(--red); padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .done h1 { margin: 0; font-size: 26px; font-weight: 900; line-height: 1.35; }
+  .done p { margin: 0; font-size: 15px; line-height: 1.75; }
+  .ghost { align-self: flex-start; font: inherit; font-size: 13px; padding: 10px 14px; min-height: 44px; border: 1px solid var(--line); background: #FFFFFF; color: var(--muted); cursor: pointer; }
+
+  .notice { background: #FFFFFF; border: 1.4px solid var(--red); padding: 18px; font-size: 15px; line-height: 1.7; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero" aria-label="응통과 학생 상담 2026학년도 2학기">
+    <svg class="orbit" viewBox="0 0 390 210" preserveAspectRatio="xMidYMid meet" fill="none" aria-hidden="true"><ellipse cx="265" cy="110" rx="140" ry="30" stroke="#C3CBD4" stroke-width="1.2"></ellipse></svg>
+    <div class="num n4" aria-hidden="true">2</div>
+    <div class="num n2" aria-hidden="true">6</div>
+    <div class="num n1" aria-hidden="true">2</div>
+    <div class="num n3" aria-hidden="true">-</div>
+    <div class="frame" aria-hidden="true"></div>
+    <div class="dot" style="left: calc(50% + 13px); top: 52px" aria-hidden="true"></div>
+    <div class="dot" style="left: calc(50% + 75px); top: 52px" aria-hidden="true"></div>
+    <div class="dot" style="left: calc(50% + 13px); top: 142px" aria-hidden="true"></div>
+    <div class="dot" style="left: calc(50% + 75px); top: 142px" aria-hidden="true"></div>
+    <div class="label">응통과 학생 상담 · 2026학년도 2학기</div>
+  </header>
+
+  <!-- 잘못된 링크 -->
+  <section id="invalid" class="stack" hidden>
+    <div class="notice">링크가 올바르지 않습니다. 이메일에 있는 버튼을 다시 눌러 접속해 주기 바랍니다.</div>
+  </section>
+
+  <!-- 응답 화면 -->
+  <form id="main" class="stack" hidden novalidate>
+    <div class="group">
+      <div class="kicker" id="moodLabel">지금 상태 (바꿀 수 있어요)</div>
+      <div class="moods" role="group" aria-labelledby="moodLabel" id="moods"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">01</span><label class="qtitle" for="goal">이번 학기 학업 목표와 진행 상황</label></div>
+      <textarea id="goal" rows="3" placeholder="목표 한 가지와 지금 어디쯤인지"></textarea>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">02</span><span class="qtitle" id="interestLabel">요즘 나의 관심사 (여러 개)</span></div>
+      <div class="chips" role="group" aria-labelledby="interestLabel" id="chips"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">03</span><label class="qtitle" for="message">교수님께 근황 업데이트하거나 묻고 싶은 질문하기</label></div>
+      <textarea id="message" rows="3" placeholder="요즘 어떻게 지내는지, 여쭤보고 싶은 점이 있다면 적어 주세요"></textarea>
+    </div>
+
+    <button type="submit" class="send" id="send">보내기</button>
+
+    <section class="guide" aria-labelledby="guideTitle">
+      <h2 id="guideTitle">대면 상담 신청 방법</h2>
+      <div class="step"><b class="n">1</b><span>경희대학교 포털(portal.khu.ac.kr) 접속 후 로그인</span></div>
+      <div class="step"><b class="n">2</b><span>포털 메인 화면 상단에서 <strong>Aladdin</strong> 선택</span></div>
+      <div class="step"><b class="n">3</b><span><strong>상담신청</strong> 메뉴에서 신청</span></div>
+      <a class="portal" href="https://portal.khu.ac.kr" target="_blank" rel="noopener">경희대학교 포털 바로가기 →</a>
+    </section>
+  </form>
+
+  <!-- 제출 완료 -->
+  <section id="done" class="done" hidden>
+    <div class="card">
+      <h1>잘 받았습니다.</h1>
+      <p>남겨 준 이야기를 읽고, 필요한 경우 개별적으로 연락하겠습니다. 남은 학기도 응원합니다.</p>
+      <strong style="font-size: 14px">박해인 교수</strong>
+    </div>
+    <button type="button" class="ghost" id="edit">내용 수정하기</button>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  // ===== 구글 폼 연결 설정 (설정 탭과 동일) =====
+  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSctYtdEajqsGVPgoNWYNaoVSVMTwRnIDcBaRgJnNF3WMa_EKA/formResponse';
+  var ENTRY = {
+    token: 'entry.687671357',
+    route: 'entry.313548729',
+    mood: 'entry.468231536',
+    concerns: 'entry.1033609182',
+    goal: 'entry.1111036628',
+    interests: 'entry.1551508959',
+    message: 'entry.146628387'
+  };
+  var ROUTE_CLICK = '이메일 클릭';
+  var ROUTE_SUBMIT = '응답 화면 제출';
+
+  // 보기 문구는 구글 폼과 글자 하나까지 같아야 함
+  var MOODS = [
+    { code: '1', label: '아주 좋아요', fill: '#62B4EE', ring: '#62B4EE' },
+    { code: '2', label: '그럭저럭 괜찮아요', fill: '#FFFFFF', ring: '#D6322A' },
+    { code: '3', label: '조금 버거워요', fill: '#1A1A1A', ring: '#1A1A1A' },
+    { code: '4', label: '도움이 필요해요', fill: '#D6322A', ring: '#D6322A' }
+  ];
+  var CONCERNS = {
+    '1': '학업 · 성적', '2': '복수전공 · 부전공', '3': '휴학', '4': '교환학생 · 해외연수',
+    '5': '대학원 진학', '6': '취업 방향', '7': '인간관계', '8': '딱히 없어요'
+  };
+  var INTERESTS = [
+    '복수전공 · 부전공', '학점 관리', '어학 시험 · 자격증', '교환학생 · 해외연수',
+    '인턴십 · 대외활동', '취업 준비', '공무원 · 공기업', '대학원 진학',
+    '동아리', '인간관계', '취미', '아르바이트', '운동 · 건강'
+  ];
+
+  // ===== URL 파라미터 =====
+  var q = new URLSearchParams(location.search);
+  var token = (q.get('t') || '').trim();
+  var moodCode = q.get('m') || '';
+  var concernCode = q.get('c') || '';
+  var concern = CONCERNS[concernCode] || '';
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  if (!/^[A-Za-z0-9]{10}$/.test(token)) {
+    $('invalid').hidden = false;
+    return;
+  }
+  $('main').hidden = false;
+
+  // ===== 제출 (응답 내용은 읽을 수 없으므로 전송만 보장) =====
+  function post(fields) {
+    var body = new URLSearchParams();
+    Object.keys(fields).forEach(function (k) {
+      var v = fields[k];
+      if (Array.isArray(v)) v.forEach(function (x) { body.append(k, x); });
+      else if (v) body.append(k, v);
+    });
+    return fetch(FORM, { method: 'POST', mode: 'no-cors', body: body, keepalive: true });
+  }
+
+  function moodLabel(code) {
+    for (var i = 0; i < MOODS.length; i++) if (MOODS[i].code === code) return MOODS[i].label;
+    return '';
+  }
+
+  // ===== 이메일 버튼 클릭 즉시 기록 (새로고침 시 중복 기록 방지) =====
+  if (moodCode || concern) {
+    var key = 'ck:' + token + ':' + moodCode + ':' + concernCode;
+    var seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) {}
+    if (!seen) {
+      var f = {};
+      f[ENTRY.token] = token;
+      f[ENTRY.route] = ROUTE_CLICK;
+      f[ENTRY.mood] = moodLabel(moodCode);
+      f[ENTRY.concerns] = concern ? [concern] : [];
+      post(f).catch(function () {});
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+    }
+  }
+
+  // ===== 상태 선택 =====
+  var currentMood = moodCode;
+  var moodsEl = $('moods');
+  MOODS.forEach(function (m) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mood';
+    b.dataset.code = m.code;
+    b.setAttribute('aria-pressed', String(m.code === currentMood));
+    var pip = document.createElement('span');
+    pip.className = 'pip';
+    pip.style.background = m.fill;
+    pip.style.borderColor = m.ring;
+    pip.setAttribute('aria-hidden', 'true');
+    b.appendChild(pip);
+    b.appendChild(document.createTextNode(m.label));
+    b.addEventListener('click', function () {
+      currentMood = m.code;
+      Array.prototype.forEach.call(moodsEl.children, function (el) {
+        el.setAttribute('aria-pressed', String(el.dataset.code === currentMood));
+      });
+    });
+    moodsEl.appendChild(b);
+  });
+
+  // ===== 관심사 =====
+  var chipsEl = $('chips');
+  INTERESTS.forEach(function (label) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.textContent = label;
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function () {
+      b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+    });
+    chipsEl.appendChild(b);
+  });
+
+  // ===== 보내기 =====
+  $('main').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var send = $('send');
+    send.disabled = true;
+    send.textContent = '보내는 중…';
+
+    var picks = Array.prototype.filter.call(chipsEl.children, function (el) {
+      return el.getAttribute('aria-pressed') === 'true';
+    }).map(function (el) { return el.textContent; });
+
+    var f = {};
+    f[ENTRY.token] = token;
+    f[ENTRY.route] = ROUTE_SUBMIT;
+    f[ENTRY.mood] = moodLabel(currentMood);
+    f[ENTRY.concerns] = concern ? [concern] : [];
+    f[ENTRY.goal] = $('goal').value.trim();
+    f[ENTRY.interests] = picks;
+    f[ENTRY.message] = $('message').value.trim();
+
+    post(f).then(function () {
+      $('main').hidden = true;
+      $('done').hidden = false;
+      window.scrollTo(0, 0);
+    }).catch(function () {
+      send.disabled = false;
+      send.textContent = '다시 보내기';
+      alert('전송하지 못했습니다. 인터넷 연결을 확인한 뒤 다시 보내 주기 바랍니다.');
+    });
+  });
+
+  $('edit').addEventListener('click', function () {
+    $('done').hidden = true;
+    $('main').hidden = false;
+    $('send').disabled = false;
+    $('send').textContent = '보내기';
+  });
+})();
+</script>
+</body>
+</html>
