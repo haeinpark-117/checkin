@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>2026 AELTS 번역 콘테스트 참가 후기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:opsz,wght@9..144,900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --blue: #2F5FD0; --blue-text: #2448A8; --yellow: #F5D90A; --ink: #111111; --paper: #EFE9DD; --line: #B9B2A6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .hero { display: block; width: 100%; height: auto; background: var(--blue); }
+  .body { padding: 22px 20px 56px; display: flex; flex-direction: column; gap: 30px; }
+  .anon { background: var(--ink); color: #FFFFFF; padding: 14px 16px; font-size: 13px; line-height: 1.7; }
+  .anon strong { font-size: 14px; }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  .kicker { font-size: 13px; font-weight: 700; color: var(--blue-text); }
+  .qhead { display: flex; gap: 8px; align-items: flex-start; }
+  .qnum { flex-shrink: 0; background: var(--blue); color: #FFFFFF; font-family: 'Fraunces', serif; font-weight: 900; font-size: 13px; padding: 2px 7px; margin-top: 2px; }
+  .qtitle { font-size: 16px; font-weight: 900; line-height: 1.45; }
+  button { font: inherit; cursor: pointer; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .grid5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+  .exp { display: flex; align-items: center; gap: 8px; text-align: left; font-size: 14px; font-weight: 500; min-height: 48px; padding: 10px 12px; background: #FFFFFF; color: #555555; border: 1px solid var(--line); }
+  .exp[aria-pressed="true"] { color: var(--ink); font-weight: 900; border: 2px solid var(--ink); }
+  .pip { width: 12px; height: 12px; flex-shrink: 0; border: 1.5px solid var(--ink); }
+  .num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 24px; min-height: 52px; border: 2px solid var(--ink); background: #FFFFFF; color: var(--ink); }
+  .num[aria-pressed="true"] { background: var(--yellow); }
+  .scale { display: flex; justify-content: space-between; font-size: 12px; color: #444444; }
+  .opt { font-size: 14px; font-weight: 700; min-height: 48px; padding: 8px 4px; border: 2px solid var(--ink); background: #FFFFFF; color: var(--ink); }
+  .opt[aria-pressed="true"] { background: var(--ink); color: #FFFFFF; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 14px; font-weight: 700; min-height: 44px; padding: 10px 14px; border: 2px solid var(--ink); background: #FFFFFF; color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--blue); color: #FFFFFF; border-color: var(--blue); }
+  textarea { font: inherit; font-size: 15px; padding: 12px; width: 100%; min-height: 110px; border: 2px solid var(--ink); border-radius: 0; background: #FFFFFF; color: var(--ink); resize: vertical; }
+  .send { font-size: 16px; font-weight: 900; padding: 16px; min-height: 56px; border: none; background: var(--blue); color: #FFFFFF; }
+  .send[disabled] { opacity: 0.6; cursor: default; }
+  button:focus-visible, textarea:focus { outline: 3px solid var(--yellow); outline-offset: 2px; }
+  .done { padding: 30px 20px 56px; display: flex; flex-direction: column; gap: 18px; }
+  .card { background: #FFFFFF; border: 2px solid var(--ink); padding: 22px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .card h1 { margin: 0; font-size: 26px; font-weight: 900; line-height: 1.35; }
+  .card p { margin: 0; font-size: 15px; line-height: 1.75; }
+  .ghost { align-self: flex-start; font-size: 13px; padding: 10px 14px; min-height: 44px; border: 1px solid #555555; background: transparent; color: #333333; }
+  [hidden] { display: none !important; }
+  @media (min-width: 640px) {
+    .body { padding: 30px 48px 72px; gap: 34px; }
+    .grid2.wide { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .send { max-width: 320px; align-self: flex-end; width: 100%; }
+    .done { padding: 40px 48px 72px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="hero" src="contest-header.png" width="720" height="340" alt="2026 AELTS Translation Contest feedback">
+
+  <form id="main" class="body" novalidate>
+    <div class="anon"><strong>익명 설문입니다.</strong> 이름, 학번, 이메일 주소는 기록되지 않습니다.</div>
+
+    <div class="group">
+      <div class="kicker" id="expLabel">이번 콘테스트 참가 경험 (바꿀 수 있어요)</div>
+      <div class="grid2 wide" role="group" aria-labelledby="expLabel" id="exps"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">01</span><span class="qtitle" id="diffLabel">지문 난이도는 어땠나요?</span></div>
+      <div class="grid5" role="group" aria-labelledby="diffLabel" id="diffs"></div>
+      <div class="scale"><span>아주 쉬웠어요</span><span>아주 어려웠어요</span></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">02</span><span class="qtitle" id="timeLabel">제한 시간은 어땠나요?</span></div>
+      <div class="grid3" role="group" aria-labelledby="timeLabel" id="times"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">03</span><span class="qtitle" id="motLabel">참가한 이유 (여러 개 선택)</span></div>
+      <div class="chips" role="group" aria-labelledby="motLabel" id="motives"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">04</span><span class="qtitle" id="fmtLabel">다음에 해 보고 싶은 형식 (여러 개 선택)</span></div>
+      <div class="chips" role="group" aria-labelledby="fmtLabel" id="formats"></div>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">05</span><label class="qtitle" for="msg">좋았던 점이나 아쉬웠던 점 (선택)</label></div>
+      <textarea id="msg" rows="4" placeholder="운영, 지문, 장소 등 무엇이든 편하게 적어 주세요"></textarea>
+    </div>
+
+    <div class="group">
+      <div class="qhead"><span class="qnum">06</span><span class="qtitle" id="nextLabel">다음 콘테스트에도 참가하고 싶나요?</span></div>
+      <div class="grid2" role="group" aria-labelledby="nextLabel" id="nexts"></div>
+    </div>
+
+    <button type="submit" class="send" id="send">보내기</button>
+  </form>
+
+  <section id="done" class="done" hidden>
+    <div class="card">
+      <h1>고맙습니다.</h1>
+      <p>남겨 준 의견은 다음 콘테스트와 학과 행사를 준비하는 데 반영하겠습니다.</p>
+      <strong style="font-size: 14px">박해인 교수</strong>
+    </div>
+    <button type="button" class="ghost" id="edit">내용 수정하기</button>
+  </section>
+</div>
+
+<script>
+(function () {
+  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSeM5gl14ML4QwKdLdudvEQzn-9eMc5XwPGllmtbxwYFLRltiQ/formResponse';
+  var E = {
+    rid: 'entry.272933852', route: 'entry.1068900419', exp: 'entry.1243111498', diff: 'entry.1889518303',
+    time: 'entry.1243395892', motives: 'entry.105628596', formats: 'entry.1110177218', msg: 'entry.1564352691', next: 'entry.118061465'
+  };
+  // 보기 문구는 구글 폼과 글자 하나까지 같아야 함
+  var EXPS = [
+    { code: '1', label: '아주 좋았어요', fill: '#2F5FD0' },
+    { code: '2', label: '좋았어요', fill: '#F5D90A' },
+    { code: '3', label: '그저 그랬어요', fill: '#FFFFFF' },
+    { code: '4', label: '아쉬웠어요', fill: '#111111' }
+  ];
+  var DIFFS = ['1 아주 쉬웠어요', '2', '3', '4', '5 아주 어려웠어요'];
+  var TIMES = ['부족했어요', '적당했어요', '여유 있었어요'];
+  var MOTIVES = ['번역 실력 점검', '시상 · 상금', '이력 · 포트폴리오', '교수님 · 친구 권유', '재미 · 호기심'];
+  var FORMATS = ['한영 번역', '영한 번역', '문학 지문', '뉴스 · 시사 지문', '광고 · 마케팅 문구', '영상 자막', 'AI 번역 후편집 부문'];
+  var NEXTS = ['꼭 참가할래요', '아마도요', '잘 모르겠어요', '아니요'];
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  // 개인을 식별하지 않는 무작위 응답 번호 (같은 브라우저의 클릭 기록과 제출을 묶는 용도)
+  function makeRid() {
+    var c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = '';
+    for (var i = 0; i < 12; i++) s += c.charAt(Math.floor(Math.random() * c.length));
+    return s;
+  }
+  var rid = '';
+  try { rid = localStorage.getItem('aelts-fb-rid') || ''; } catch (e) {}
+  if (!rid) { rid = makeRid(); try { localStorage.setItem('aelts-fb-rid', rid); } catch (e) {} }
+
+  function post(fields) {
+    var body = new URLSearchParams();
+    Object.keys(fields).forEach(function (k) {
+      var v = fields[k];
+      if (Array.isArray(v)) v.forEach(function (x) { body.append(k, x); });
+      else if (v) body.append(k, v);
+    });
+    return fetch(FORM, { method: 'POST', mode: 'no-cors', body: body, keepalive: true });
+  }
+  function expLabel(code) {
+    for (var i = 0; i < EXPS.length; i++) if (EXPS[i].code === code) return EXPS[i].label;
+    return '';
+  }
+
+  var q = new URLSearchParams(location.search);
+  var exp = q.get('e') || '';
+  if (!expLabel(exp)) exp = '';
+
+  // 이메일 버튼 클릭 즉시 기록 (새로고침 시 중복 방지)
+  if (exp) {
+    var key = 'aelts-fb-click:' + exp, seen = false;
+    try { seen = sessionStorage.getItem(key) === '1'; } catch (e) {}
+    if (!seen) {
+      var f = {}; f[E.rid] = rid; f[E.route] = '이메일 클릭'; f[E.exp] = expLabel(exp);
+      post(f).catch(function () {});
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+    }
+  }
+
+  function single(container, items, cls, current, render) {
+    var state = { value: current };
+    items.forEach(function (it) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = cls;
+      b.dataset.v = it.value;
+      b.setAttribute('aria-pressed', String(it.value === state.value));
+      render(b, it);
+      b.addEventListener('click', function () {
+        state.value = it.value;
+        Array.prototype.forEach.call(container.children, function (el) { el.setAttribute('aria-pressed', String(el.dataset.v === state.value)); });
+      });
+      container.appendChild(b);
+    });
+    return state;
+  }
+  function multi(container, items) {
+    items.forEach(function (label) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip'; b.textContent = label;
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () { b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); });
+      container.appendChild(b);
+    });
+    return function () {
+      return Array.prototype.filter.call(container.children, function (el) { return el.getAttribute('aria-pressed') === 'true'; })
+        .map(function (el) { return el.textContent; });
+    };
+  }
+
+  var expState = single($('exps'), EXPS.map(function (x) { return { value: x.code, label: x.label, fill: x.fill }; }), 'exp', exp, function (b, it) {
+    var p = document.createElement('span'); p.className = 'pip'; p.style.background = it.fill; p.setAttribute('aria-hidden', 'true');
+    b.appendChild(p); b.appendChild(document.createTextNode(it.label));
+  });
+  var diffState = single($('diffs'), DIFFS.map(function (d, i) { return { value: d, label: String(i + 1) }; }), 'num', '', function (b, it) {
+    b.textContent = it.label; b.setAttribute('aria-label', '난이도 ' + it.label);
+  });
+  var timeState = single($('times'), TIMES.map(function (t) { return { value: t, label: t }; }), 'opt', '', function (b, it) { b.textContent = it.label; });
+  var nextState = single($('nexts'), NEXTS.map(function (t) { return { value: t, label: t }; }), 'opt', '', function (b, it) { b.textContent = it.label; });
+  var getMotives = multi($('motives'), MOTIVES);
+  var getFormats = multi($('formats'), FORMATS);
+
+  $('main').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var send = $('send');
+    send.disabled = true; send.textContent = '보내는 중…';
+    var f = {};
+    f[E.rid] = rid; f[E.route] = '응답 화면 제출';
+    f[E.exp] = expLabel(expState.value);
+    f[E.diff] = diffState.value; f[E.time] = timeState.value;
+    f[E.motives] = getMotives(); f[E.formats] = getFormats();
+    f[E.msg] = $('msg').value.trim(); f[E.next] = nextState.value;
+    post(f).then(function () {
+      $('main').hidden = true; $('done').hidden = false; window.scrollTo(0, 0);
+    }).catch(function () {
+      send.disabled = false; send.textContent = '다시 보내기';
+      alert('전송하지 못했습니다. 인터넷 연결을 확인한 뒤 다시 보내 주기 바랍니다.');
+    });
+  });
+  $('edit').addEventListener('click', function () {
+    $('done').hidden = true; $('main').hidden = false;
+    $('send').disabled = false; $('send').textContent = '보내기';
+  });
+})();
+</script>
+</body>
+</html>
