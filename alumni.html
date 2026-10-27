@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RE:CONNECT AELTS · 근황 업데이트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#111111; --paper:#E9E9E6; --line:#A9A9A5; --y:#F2CF5B; --r:#EE4B2B; --b:#4DB6E8; --g:#8FF0B6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .en { font-family: 'Montserrat', 'Arial Black', sans-serif; }
+
+  .hero { position: relative; height: clamp(300px, 72vw, 520px); overflow: hidden; }
+  .hero .bar { position: absolute; top: 16px; height: 8px; background: var(--ink); }
+  .hero .vl { position: absolute; left: 26%; top: 16px; bottom: 0; width: 1px; background: var(--line); }
+  .hero .hl { position: absolute; left: 0; right: 0; top: 56%; height: 1px; background: var(--line); }
+  .hero .meta { position: absolute; left: 16px; top: 38px; font-size: 10px; font-weight: 700; line-height: 1.3; }
+  .hero .meta b { display: block; font-size: 18px; font-weight: 800; margin-top: 6px; }
+  .hero .ko { position: absolute; left: calc(26% + 12px); top: 34px; font-size: clamp(20px, 4.6vw, 32px); font-weight: 900; }
+  .big { position: absolute; font-weight: 900; line-height: 1; letter-spacing: -0.02em; font-size: clamp(118px, 30vw, 210px);
+         text-shadow: 0 -0.06em 0 rgba(238,75,43,.92), 0 0.06em 0 rgba(77,182,232,.92), 0 -0.12em 0 rgba(242,207,91,.92), 0 0.12em 0 rgba(143,240,182,.92); }
+  .big.re { left: calc(26% + 10px); top: 22%; }
+  .big.cn { left: -0.18em; top: 61%; }
+  .chs { text-shadow: 0 -2px 0 var(--r), 0 2px 0 var(--b), 0 -4px 0 var(--y), 0 4px 0 var(--g); }
+
+  main { padding: 26px 20px 60px; display: flex; flex-direction: column; gap: 32px; }
+  .intro .rule { height: 2px; background: var(--ink); }
+  .intro h1 { margin: 16px 0 0; font-size: clamp(28px, 6vw, 40px); font-weight: 900; line-height: 1.1; }
+  .intro p { margin: 10px 0 0; font-size: 15px; font-weight: 700; line-height: 1.6; color: #333; }
+
+  .sec { display: flex; flex-direction: column; gap: 14px; }
+  .sec-h { display: flex; align-items: baseline; gap: 10px; border-top: 2px solid var(--ink); padding-top: 12px; }
+  .sec-h .n { font-size: 20px; font-weight: 800; }
+  .sec-h .t { font-size: 16px; font-weight: 900; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .f { display: flex; flex-direction: column; gap: 6px; }
+  .f label { font-size: 13px; font-weight: 700; }
+  .f label i { font-style: normal; color: var(--r); }
+  .fld { font-family: inherit; font-size: 16px; padding: 11px 12px; border: 2px solid var(--ink); border-radius: 0; background: #fff; min-height: 48px; width: 100%; color: var(--ink); }
+  textarea.fld { resize: vertical; min-height: 96px; line-height: 1.6; }
+  .fld:focus { outline: 3px solid var(--b); outline-offset: 1px; }
+
+  .vis, .join { display: flex; flex-direction: column; gap: 8px; }
+  .opt { font-family: inherit; cursor: pointer; display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 14px; background: #fff; color: var(--ink); border: 3px solid transparent; text-align: left; width: 100%; }
+  .opt[aria-pressed="true"] { border-color: var(--ink); }
+  .dot { width: 18px; height: 18px; border-radius: 99px; flex-shrink: 0; margin: 0 4px; background: var(--ink); }
+  .dot.full { box-shadow: 0 -3px 0 var(--r), 0 3px 0 var(--b), 0 -6px 0 var(--y), 0 6px 0 var(--g); }
+  .dot.half { box-shadow: 0 -3px 0 var(--r), 0 3px 0 var(--b); }
+  .dot.none { background: transparent; border: 2px solid #8A8A86; }
+  .opt .l { display: flex; flex-direction: column; gap: 2px; }
+  .opt .l b { font-size: 15px; font-weight: 900; }
+  .opt .l span { font-size: 12px; color: #555; }
+
+  .jb { font-family: inherit; cursor: pointer; display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 14px; font-size: 14px; font-weight: 700; border: 2px solid var(--ink); background: #fff; color: var(--ink); text-align: left; width: 100%; }
+  .jb .tag { font-size: 17px; font-weight: 900; width: 110px; flex-shrink: 0; }
+  .jb[aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .jb[aria-pressed="true"] .tag { text-shadow: 0 -2px 0 var(--r), 0 2px 0 var(--b), 0 -4px 0 var(--y), 0 4px 0 var(--g); }
+
+  .err { display: none; font-size: 13px; font-weight: 700; color: #C2361B; }
+  .err.on { display: block; }
+  .sendw { padding: 8px 0; }
+  .send { width: 100%; font-family: inherit; font-size: 17px; font-weight: 900; min-height: 60px; border: none; background: var(--ink); color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+          box-shadow: 0 -4px 0 var(--r), 0 4px 0 var(--b), 0 -8px 0 var(--y), 0 8px 0 var(--g); }
+  .send[disabled] { opacity: .6; cursor: wait; }
+
+  .done { display: none; padding: 34px 20px 64px; flex-direction: column; gap: 20px; }
+  .done.on { display: flex; }
+  .done .rule { height: 2px; background: var(--ink); }
+  .done h2 { margin: 18px 0 0; font-size: 64px; font-weight: 900; line-height: 1; text-shadow: 0 -7px 0 rgba(238,75,43,.92), 0 7px 0 rgba(77,182,232,.92), 0 -14px 0 rgba(242,207,91,.92), 0 14px 0 rgba(143,240,182,.92); }
+  .done p { margin: 14px 0 0; font-size: 15px; line-height: 1.8; }
+  .edit { align-self: flex-start; font-family: inherit; font-size: 13px; padding: 10px 14px; min-height: 44px; border: 2px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero en" aria-hidden="true">
+    <div class="bar" style="left:16px;width:calc(26% - 26px)"></div>
+    <div class="bar" style="left:calc(26% + 8px);right:16px"></div>
+    <div class="vl"></div><div class="hl"></div>
+    <div class="meta">AELTS<br>ALUMNI<b>2026</b></div>
+    <div class="ko" style="font-family:'Noto Sans KR',sans-serif">다시 잇는 응통</div>
+    <div class="big re">RE:</div>
+    <div class="big cn">CONNECT</div>
+  </div>
+
+  <main id="form">
+    <div class="intro">
+      <div class="rule"></div>
+      <h1 class="en chs">RE:CONNECT AELTS</h1>
+      <p>지금의 이야기를 들려주세요. 1분이면 충분합니다.</p>
+    </div>
+
+    <section class="sec">
+      <div class="sec-h"><span class="n en">01</span><span class="t">나의 지금</span></div>
+      <div class="grid2">
+        <div class="f"><label for="nm">이름 <i>*</i></label><input id="nm" class="fld" type="text" autocomplete="name" placeholder="홍길동"></div>
+        <div class="f"><label for="yr">학번 <i>*</i></label><input id="yr" class="fld" type="text" inputmode="numeric" maxlength="2" placeholder="예: 17 (2017학번)"></div>
+      </div>
+      <div class="f"><label for="org">현재 소속</label><input id="org" class="fld" type="text" autocomplete="organization" placeholder="회사, 기관, 학교 등"></div>
+      <div class="f"><label for="role">직무</label><input id="role" class="fld" type="text" placeholder="예: 해외영업, 통번역, 교사"></div>
+      <div class="f"><label for="work">요즘 하고 있는 일</label><textarea id="work" class="fld" rows="3" placeholder="어떤 일을 하며 지내는지 한두 줄로 들려주세요"></textarea></div>
+      <div class="f"><label for="city">거주 도시</label><input id="city" class="fld" type="text" placeholder="예: 서울, 싱가포르"></div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-h"><span class="n en">02</span><span class="t">Alumni Map 공개 범위</span></div>
+      <div class="vis" role="group" aria-label="Alumni Map 공개 범위">
+        <button type="button" class="opt" data-v="이름까지 공개" aria-pressed="false"><span class="dot full"></span><span class="l"><b>이름까지 공개</b><span>이름 · 학번 · 직무 · 도시</span></span></button>
+        <button type="button" class="opt" data-v="분야와 도시만" aria-pressed="true"><span class="dot half"></span><span class="l"><b>분야와 도시만</b><span>직무 · 도시만 보이고 이름은 보이지 않아요</span></span></button>
+        <button type="button" class="opt" data-v="비공개" aria-pressed="false"><span class="dot none"></span><span class="l"><b>비공개</b><span>지도에 표시하지 않고 학과만 확인해요</span></span></button>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-h"><span class="n en">03</span><span class="t">응통인의 밤에 함께하실 수 있나요?</span></div>
+      <div class="join" role="group" aria-label="응통인의 밤 참석 의향">
+        <button type="button" class="jb" data-j="가능하면 참석할게요" aria-pressed="false"><span class="tag en">JOIN</span><span>가능하면 참석할게요</span></button>
+        <button type="button" class="jb" data-j="이번엔 어려워요" aria-pressed="false"><span class="tag en">NEXT TIME</span><span>이번엔 어려워요</span></button>
+      </div>
+    </section>
+
+    <div class="err" id="err" role="alert"></div>
+    <div class="sendw"><button type="button" class="send" id="send"><span>근황 보내기</span><span class="en" style="font-size:18px;font-weight:800">SEND →</span></button></div>
+  </main>
+
+  <section class="done" id="done" aria-live="polite">
+    <div class="rule"></div>
+    <h2 class="en">THANK<br>YOU</h2>
+    <p>들려주신 이야기는 AELTS Alumni Map과 응통인의 밤 준비에 소중히 쓰겠습니다. 일정이 정해지면 다시 안내드리겠습니다.</p>
+    <strong style="font-size:14px">AELTS 학과사무실</strong>
+    <button type="button" class="edit" id="edit">내용 수정하기</button>
+  </section>
+</div>
+
+<script>
+(function () {
+  // 응답 저장용 Google Form (연결 전에는 비어 있음)
+  var FORM = { action: '', entries: {} };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { vis: '분야와 도시만', join: '' };
+
+  function bindGroup(sel, key, attr) {
+    var btns = document.querySelectorAll(sel);
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state[key] = b.getAttribute(attr);
+        btns.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      });
+    });
+  }
+  bindGroup('.opt', 'vis', 'data-v');
+  bindGroup('.jb', 'join', 'data-j');
+
+  function val(id) { return $(id).value.trim(); }
+
+  $('send').addEventListener('click', function () {
+    var miss = [];
+    if (!val('nm')) miss.push('이름');
+    if (!/^\d{2}$/.test(val('yr'))) miss.push('학번(두 자리)');
+    if (!state.join) miss.push('응통인의 밤 참석 의향');
+    if (miss.length) { $('err').textContent = miss.join(', ') + '을(를) 입력해 주세요.'; $('err').classList.add('on'); return; }
+    $('err').classList.remove('on');
+
+    var data = { name: val('nm'), year: val('yr'), org: val('org'), role: val('role'), work: val('work'), city: val('city'), vis: state.vis, join: state.join };
+    var btn = $('send'); btn.disabled = true;
+    var finish = function () { btn.disabled = false; $('form').style.display = 'none'; $('done').classList.add('on'); window.scrollTo(0, 0); };
+    if (!FORM.action) { finish(); return; }
+    var fd = new URLSearchParams();
+    Object.keys(FORM.entries).forEach(function (k) { if (data[k] != null) fd.append(FORM.entries[k], data[k]); });
+    fetch(FORM.action, { method: 'POST', mode: 'no-cors', body: fd }).then(finish, finish);
+  });
+
+  $('edit').addEventListener('click', function () { $('done').classList.remove('on'); $('form').style.display = ''; window.scrollTo(0, 0); });
+})();
+</script>
+</body>
+</html>
