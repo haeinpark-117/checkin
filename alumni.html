@@ -105,6 +105,7 @@
         <div class="f"><label for="nm">이름 <i>*</i></label><input id="nm" class="fld" type="text" autocomplete="name" placeholder="홍길동"></div>
         <div class="f"><label for="yr">학번 <i>*</i></label><input id="yr" class="fld" type="text" inputmode="numeric" maxlength="2" placeholder="예: 18 (2018학번)"></div>
       </div>
+      <div class="f"><label for="em">이메일 <i>*</i></label><input id="em" class="fld" type="email" inputmode="email" autocomplete="email" autocapitalize="off" placeholder="name@example.com"><p class="note">응통인의 밤 세부 안내를 이 주소로 보내 드립니다.</p></div>
       <div class="f"><label for="org">현재 소속</label><input id="org" class="fld" type="text" autocomplete="organization" placeholder="회사, 기관, 학교 등"></div>
       <div class="f"><label for="role">직무</label><input id="role" class="fld" type="text" placeholder="예: 해외영업, 통번역, 교사"></div>
       <div class="f"><label for="work">요즘 하고 있는 일</label><textarea id="work" class="fld" rows="3" placeholder="어떤 일을 하며 지내는지 한두 줄로 들려주세요"></textarea></div>
@@ -145,7 +146,7 @@
 <script>
 (function () {
   // 응답 저장용 Google Form: RE:CONNECT AELTS 동문 근황 (2026)
-  var FORM = { action: 'https://docs.google.com/forms/d/e/1FAIpQLSeBM_kI6BjJ6_zgEt8qDWyp62GoeDgTWBL1deWAE_p4G7a58A/formResponse', entries: { name: 'entry.1491393835', year: 'entry.1529980520', org: 'entry.654386174', role: 'entry.895251100', work: 'entry.1858431661', city: 'entry.760148079', vis: 'entry.1635044215', join: 'entry.1665244158' } };
+  var FORM = { action: 'https://docs.google.com/forms/d/e/1FAIpQLSeBM_kI6BjJ6_zgEt8qDWyp62GoeDgTWBL1deWAE_p4G7a58A/formResponse', entries: { name: 'entry.1491393835', year: 'entry.1529980520', org: 'entry.654386174', role: 'entry.895251100', work: 'entry.1858431661', city: 'entry.760148079', vis: 'entry.1635044215', join: 'entry.1665244158', email: 'entry.2133381250' } };
 
   var $ = function (id) { return document.getElementById(id); };
   var state = { vis: '분야와 도시만', join: '' };
@@ -168,11 +169,12 @@
     var miss = [];
     if (!val('nm')) miss.push('이름');
     if (!/^\d{2}$/.test(val('yr'))) miss.push('학번(두 자리)');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('em'))) miss.push('이메일');
     if (!state.join) miss.push('응통인의 밤 참석 의향');
     if (miss.length) { $('err').textContent = miss.join(', ') + '을(를) 입력해 주세요.'; $('err').classList.add('on'); return; }
     $('err').classList.remove('on');
 
-    var data = { name: val('nm'), year: val('yr'), org: val('org'), role: val('role'), work: val('work'), city: val('city'), vis: state.vis, join: state.join };
+    var data = { name: val('nm'), year: val('yr'), org: val('org'), role: val('role'), work: val('work'), city: val('city'), email: val('em'), vis: state.vis, join: state.join };
     var btn = $('send'); btn.disabled = true;
     var finish = function () { btn.disabled = false; $('form').style.display = 'none'; $('done').classList.add('on'); window.scrollTo(0, 0); };
     if (!FORM.action) { finish(); return; }
