@@ -26,7 +26,9 @@ body{background-color:var(--pink);background-image:url("data:image/svg+xml;utf8,
 .content{position:relative;z-index:2;padding:0 30px 46px}
 .head{position:relative;width:calc(100% + 60px);margin-left:-30px;aspect-ratio:390/190}
 .head .title{position:absolute;left:6.41%;top:9.47%;width:90.5%}
-.hat{position:absolute;left:7.69%;top:0;width:13.6%;height:auto;transform:rotate(-14deg);z-index:4}
+.hatbox{position:absolute;left:0;top:0;width:100%;z-index:5;pointer-events:none}
+@media (min-width:460px){.hat{top:10px!important}}
+.hat{position:absolute;left:7.69%;top:2.3vw;width:13.6%;height:auto;transform:rotate(-14deg)}
 .tag{display:block;width:34.9%;margin:-5px -3px 0 auto}
 .cond{font-family:'Oswald',sans-serif;font-weight:700}
 .pen{font-family:'Gothic A1',sans-serif;font-weight:900;letter-spacing:-0.02em}
@@ -74,11 +76,6 @@ button.go[disabled]{opacity:.6}
 <div class="content">
 <div class="head">
 <img class="title" src="title.png" alt="RE:CONNECT AELTS">
-<svg class="hat"  viewBox="0 0 120 96" aria-hidden="true">
-<path d="M14 70 C24 34 52 10 86 14 C98 16 104 30 100 46 C96 40 90 38 84 42 C74 50 64 62 60 72 Z" fill="#AB1315" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
-<path d="M8 66 C36 58 66 60 70 70 C72 80 50 86 10 84 C2 82 2 70 8 66 Z" fill="#FFFFFF" stroke="#141414" stroke-width="3"/>
-<circle cx="102" cy="50" r="12" fill="#FFFFFF" stroke="#141414" stroke-width="3"/>
-</svg>
 </div>
 <img class="tag" src="tag.png" alt="응통 THEN × NOW">
 
@@ -125,6 +122,11 @@ button.go[disabled]{opacity:.6}
 <div class="cont"><span class="cond k">문의</span><div class="v">학생회장 한수애: 010-2731-6720<br>부학생회장 이다솔: 010-6600-9930<br>기획운영국장 양유민: 010-7211-8752<br>학생회 메일: aelts-studentcouncil@khu.ac.kr</div></div>
 </div>
 <svg id="frame" aria-hidden="true"></svg>
+<div class="hatbox"><svg class="hat"  viewBox="0 0 120 96" aria-hidden="true">
+<path d="M14 70 C24 34 52 10 86 14 C98 16 104 30 100 46 C96 40 90 38 84 42 C74 50 64 62 60 72 Z" fill="#AB1315" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+<path d="M8 66 C36 58 66 60 70 70 C72 80 50 86 10 84 C2 82 2 70 8 66 Z" fill="#FFFFFF" stroke="#141414" stroke-width="3"/>
+<circle cx="102" cy="50" r="12" fill="#FFFFFF" stroke="#141414" stroke-width="3"/>
+</svg></div>
 </div>
 <script>
 var FORM={"action": "https://docs.google.com/forms/d/e/1FAIpQLSdUFFqYcCWqReR0RevKzYoVzlwM4F3W58oBB9hdA7veswoHbA/formResponse", "entries": {"성함": "entry.1792076766", "학번": "entry.1461745366", "휴대전화 번호": "entry.1900554565", "참석 예정 시간": "entry.1300882880", "뒤풀이 참석": "entry.590555352", "이메일": "entry.2087151579", "그룹": "entry.1941573762", "신청 경로": "entry.162234895"}, "sheet": "1AUC520ymuGsXOa7Z__O4l7Hg_YiaxDkZ69jnOBYhNyg"};
