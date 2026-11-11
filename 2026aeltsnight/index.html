@@ -62,14 +62,14 @@ form{display:flex;flex-direction:column;gap:18px;margin-top:18px}
 .err{font-size:13px;font-weight:700;color:var(--rib);min-height:0}
 button.go{display:flex;justify-content:space-between;align-items:center;width:100%;background:var(--rib);color:#fff;border:2px solid var(--ink);padding:16px 18px;font:900 16px 'Gothic A1',sans-serif;letter-spacing:-.02em;cursor:pointer;-webkit-appearance:none;border-radius:0}
 button.go[disabled]{opacity:.6}
-.cont{display:flex;flex-direction:column;gap:4px;margin-top:22px}
+.cont{display:flex;flex-direction:column;gap:4px;margin-top:22px}.side-cont{display:none}
 .cont .k{font-size:12px;letter-spacing:.14em}
 .cont .v{font-size:13px;line-height:1.75;color:#3A2A30}
 .txt{font-size:15px;line-height:1.8;margin-top:18px}
 .alert{font-size:14px;line-height:1.75;background:#FCEFF3;border-left:4px solid var(--rib);padding:12px 14px;margin-top:18px}
 .deadline{font-size:13px;line-height:1.7}
 [hidden]{display:none!important}
-@media (min-width:900px){.wrap{max-width:760px}.hat{top:5px!important}.content{padding:0 44px 56px}.head{width:calc(100% + 88px);margin-left:-44px}#formView{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:32px;align-items:start}#formView .ttl{grid-column:1/-1}#formView .box{align-self:center;margin-top:0}body:has(#formView:not([hidden])) .cont{margin-left:calc(50% + 16px)}#doneView .txt,#doneView .alert{font-size:15px}}
+@media (min-width:900px){.wrap{max-width:760px}.hat{top:5px!important}.content{padding:0 44px 56px}.head{width:calc(100% + 88px);margin-left:-44px}#formView{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:32px;align-items:start}#formView .ttl{grid-column:1/-1}#formView .side{align-self:center}#formView .side .box{margin-top:0}#formView .side .side-cont{display:flex}body:has(#formView:not([hidden])) .cont:not(.side-cont){display:none}#doneView .txt,#doneView .alert{font-size:15px}}
 </style>
 </head>
 <body>
@@ -83,6 +83,7 @@ button.go[disabled]{opacity:.6}
 
 <section id="formView">
 <div class="ttl"><span class="cond k">RSVP</span><span class="pen t">응통인의 밤 참석 신청</span></div>
+<div class="side">
 <div class="box">
 <div class="row"><span class="cond k">WHEN</span><span class="v">2026년 11월 26일(목) 18:00~21:00</span></div>
 <div class="row"><span class="cond k">WHERE</span><span class="v"><a href="https://naver.me/5CzpCfNS" target="_blank" rel="noopener" style="text-decoration:underline">8번가 카페 지하 1층<br><span style="font-weight:400">서울 동대문구 회기동 42-139</span></a></span></div>
@@ -95,6 +96,8 @@ button.go[disabled]{opacity:.6}
 <div class="prog"><span class="cond n">04</span><span class="v">웰컴키트 제공 및 상품 증정</span></div>
 <div class="prog"><span class="cond n">05</span><span class="v">행사 종료 후 뒤풀이 (식사 회비 있을 예정)</span></div>
 </div>
+</div>
+<div class="cont side-cont"><span class="cond k">문의</span><div class="v">학생회장 한수애: 010-2731-6720<br>부학생회장 이다솔: 010-6600-9930<br>기획운영국장 양유민: 010-7211-8752<br>학생회 메일: aelts-studentcouncil@khu.ac.kr</div></div>
 </div>
 <form id="f" novalidate>
 <div class="f"><label for="name">성함</label><input id="name" type="text" autocomplete="name" placeholder="성함을 입력해 주세요"><span class="note" id="nameNote" hidden>메일 링크로 성함이 미리 입력되어 있습니다. 필요하면 수정해 주세요.</span></div>
