@@ -122,11 +122,10 @@
     </section>
 
     <section class="sec">
-      <div class="sec-h"><span class="n en">03</span><span class="t">응통인의 밤에 함께하실 수 있나요?</span></div>
-      <p class="note">올해 응통인의 밤은 11월 26일(목)에 열립니다. 시간과 장소, 행사 내용은 추후 메일로 다시 안내드리겠습니다.</p>
-      <div class="join" role="group" aria-label="응통인의 밤 참석 의향">
-        <button type="button" class="jb" data-j="가능하면 참석할게요" aria-pressed="false"><span class="tag en">JOIN</span><span>가능하면 참석할게요</span></button>
-        <button type="button" class="jb" data-j="이번엔 어려워요" aria-pressed="false"><span class="tag en">NEXT TIME</span><span>이번엔 어려워요</span></button>
+      <div class="sec-h"><span class="n en">03</span><span class="t">응통인의 밤 참석 신청</span></div>
+      <p class="note">2026 응통인의 밤은 11월 26일(목) 18:00~21:00, 8번가 카페 지하 1층에서 열립니다. 참석하실 수 있다면 아래 신청서를 작성해 주세요. 신청서는 새 창에서 열립니다.</p>
+      <div class="join">
+        <a class="jb" href="https://haeinpark-117.github.io/checkin/2026aeltsnight/" target="_blank" rel="noopener" style="text-decoration:none"><span class="tag en">RSVP</span><span>응통인의 밤 참석 신청하기 →</span></a>
       </div>
     </section>
 
@@ -161,7 +160,7 @@
     });
   }
   bindGroup('.opt', 'vis', 'data-v');
-  bindGroup('.jb', 'join', 'data-j');
+
 
   function val(id) { return $(id).value.trim(); }
 
@@ -170,7 +169,6 @@
     if (!val('nm')) miss.push('이름');
     if (!/^\d{2}$/.test(val('yr'))) miss.push('학번(두 자리)');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('em'))) miss.push('이메일');
-    if (!state.join) miss.push('응통인의 밤 참석 의향');
     if (miss.length) { $('err').textContent = miss.join(', ') + '을(를) 입력해 주세요.'; $('err').classList.add('on'); return; }
     $('err').classList.remove('on');
 
